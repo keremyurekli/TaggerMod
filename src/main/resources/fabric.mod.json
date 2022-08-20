@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "taggermod",
+  "version": "${version}",
+  "name": "Tagger",
+  "description": "tag blocks br",
+  "authors": [
+    "keremyurekli"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/taggermod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.keremyurekli.taggermod.client.TaggermodClient"
+    ],
+    "main": [
+      "com.keremyurekli.taggermod.Taggermod"
+    ]
+  },
+  "mixins": [
+    "taggermod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
