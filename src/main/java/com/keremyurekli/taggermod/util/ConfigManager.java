@@ -13,12 +13,18 @@ import java.util.List;
 
 import static java.nio.file.Files.createFile;
 
+
+/**
+ *
+ config manager will be used later
+ */
 public class ConfigManager {
 
     private static Path dir;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static List<BlockPos> blockPosList = new ArrayList<>();
+    public static boolean isTracerEnabled = true;
 
     public static List<BlockPos> getBlockPosList() {
         return readFile().stream().map(s -> fromCustomType(s)).toList();

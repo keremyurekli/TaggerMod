@@ -1,4 +1,6 @@
 {
   "key.ray.fire": "Tag Block",
+  "key.tracer.toggle": "Tracer",
+  "key.ray.clear": "Clear Blocks",
   "category.tagger.main": "Tagger Mod"
 }
