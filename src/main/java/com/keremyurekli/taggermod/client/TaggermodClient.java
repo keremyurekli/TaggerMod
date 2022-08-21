@@ -20,6 +20,7 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.*;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL32;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -101,31 +102,30 @@ public class TaggermodClient implements ClientModInitializer {
                 MatrixStack stack = context.matrixStack();
                 Camera mainCamera = minecraft.gameRenderer.getCamera();
                 Vec3d camera = mainCamera.getPos();
-                
+
+
+                stack.push();
                 Tessellator tessellator = Tessellator.getInstance();
-                
                 BufferBuilder buffer = tessellator.getBuffer();
-                
+                buffer.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
+
                 VertexConsumerProvider vertexConsumerProvider = context.consumers();
                 
                 assert vertexConsumerProvider != null;
-                
-                stack.push();
+
                 
                 VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(RenderLayer.LINES);
-                
-                buffer.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
-                
+
+
                 RenderSystem.applyModelViewMatrix();
-                
                 stack.translate(-camera.x, -camera.y, -camera.z);
                 
                 renderBlockBounding(stack,vertexConsumer,blockPos);
-                
-                
+
+
                 tessellator.draw();
                 stack.pop();
-                
+                RenderSystem.applyModelViewMatrix();
 
             }
         }
