@@ -22,7 +22,8 @@ https://user-images.githubusercontent.com/85027678/185804300-84b1998c-0da1-4947-
                       
 ## **TODO:**                            
   >A option to change color of tagged blocks per world                        
-  >Fix known issues        
+  >Fix known issues  
+  >Tagger support for mobs
   
  ## **Thanks to**                  
  >[AdvancedXray](https://github.com/AdvancedXRay) for [XRay-Fabric](https://github.com/AdvancedXRay/XRay-Fabric)                
