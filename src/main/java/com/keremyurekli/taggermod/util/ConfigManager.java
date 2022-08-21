@@ -2,7 +2,6 @@ package com.keremyurekli.taggermod.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 
@@ -19,9 +18,9 @@ public class ConfigManager {
     private static Path dir;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public static List<BlockPos> positions = new ArrayList<>();
+    public static List<BlockPos> blockPosList = new ArrayList<>();
 
-    public static List<BlockPos> getPositions() {
+    public static List<BlockPos> getBlockPosList() {
         return readFile().stream().map(s -> fromCustomType(s)).toList();
     }
 
