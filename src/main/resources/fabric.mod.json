@@ -3,7 +3,7 @@
   "id": "taggermod",
   "version": "${version}",
   "name": "Tagger",
-  "description": "tag blocks br",
+  "description": "Tag blocks ",
   "authors": [
     "keremyurekli"
   ],
