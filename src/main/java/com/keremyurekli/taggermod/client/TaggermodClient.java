@@ -151,7 +151,7 @@ public class TaggermodClient implements ClientModInitializer {
 
                 RenderSystem.setShader(GameRenderer::getPositionColorShader);
                 RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
-                RenderSystem.depthMask(false);
+                RenderSystem.disableDepthTest();
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
                 RenderSystem.disableTexture();
@@ -161,13 +161,6 @@ public class TaggermodClient implements ClientModInitializer {
                 BufferBuilder buffer = tessellator.getBuffer();
                 buffer.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
                 buffer.color(COLOR_FLOAT[0], COLOR_FLOAT[1], COLOR_FLOAT[2], COLOR_FLOAT[3]);
-
-                VertexConsumerProvider vertexConsumerProvider = context.consumers();
-
-                assert vertexConsumerProvider != null;
-
-
-                VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(RenderLayer.LINES);
 
 
                 RenderSystem.applyModelViewMatrix();
@@ -192,6 +185,7 @@ public class TaggermodClient implements ClientModInitializer {
                 stack.pop();
                 RenderSystem.applyModelViewMatrix();
                 RenderSystem.setShaderColor(1, 1, 1, 1);
+                RenderSystem.enableDepthTest();
                 GL11.glEnable(GL11.GL_DEPTH_TEST);
                 GL11.glEnable(GL11.GL_BLEND);
                 GL11.glEnable(GL11.GL_LINE_SMOOTH);
