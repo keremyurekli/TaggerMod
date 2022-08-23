@@ -13,6 +13,9 @@ https://user-images.githubusercontent.com/85027678/185804300-84b1998c-0da1-4947-
 
 
 
+## **Config File:**     
+![image](https://user-images.githubusercontent.com/85027678/186187870-e7faa3c2-0d9b-421c-b30e-b0fc7f50d363.png)
+  >Config accepts hex color format.
 
 ## **Known issues:**                                     
   >Render glitch on water while using tracer                 
