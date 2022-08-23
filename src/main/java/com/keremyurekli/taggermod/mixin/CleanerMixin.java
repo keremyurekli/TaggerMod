@@ -19,7 +19,7 @@ public class CleanerMixin {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
         TaggermodClient.LOGGER.info("Cleaning up...");
-        ConfigManager.blockPosList.clear();
+       TaggermodClient.blockPosList.clear();
 
     }
 }

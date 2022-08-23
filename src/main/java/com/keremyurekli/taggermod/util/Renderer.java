@@ -3,15 +3,10 @@ package com.keremyurekli.taggermod.util;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Matrix3f;
-import net.minecraft.util.math.Matrix4f;
-import net.minecraft.util.math.Vec3f;
+import net.minecraft.util.math.*;
 import org.lwjgl.opengl.GL11;
 
-import java.util.OptionalDouble;
-
-import static com.keremyurekli.taggermod.client.TaggermodClient.COLOR_FLOAT;
+import java.awt.*;
 
 public class Renderer extends RenderLayer {
 
@@ -20,20 +15,26 @@ public class Renderer extends RenderLayer {
         super(name, vertexFormat, drawMode, expectedBufferSize, hasCrumbling, translucent, startAction, endAction);
     }
 
-    public static void renderBlockBounding(MatrixStack matrices, BufferBuilder builder, BlockPos b) {
+    public static void renderBlockBounding(MatrixStack matrices, BufferBuilder builder, BlockPos b, float red, float green, float blue, float alpha) {
         if (b == null) {
             return;
         }
 
         final float size = 1.0f;
-        final float x = b.getX(), y = b.getY(), z = b.getZ(), opacity = 1.0f;
+        final float x = b.getX(), y = b.getY(), z = b.getZ();
 
-        float red = COLOR_FLOAT[0];
-        float green = COLOR_FLOAT[1];
-        float blue = COLOR_FLOAT[2];
+
 
         WorldRenderer.drawBox(
-                matrices, builder, x, y, z, x + size, y + size, z + size, red, green, blue, opacity);
+                matrices, builder, x, y, z, x + size, y + size, z + size, red, green, blue, alpha);
+    }
+
+    public static void renderBox(MatrixStack stack, BufferBuilder builder, Box b, float red, float green, float blue, float alpha) {
+        if (b == null) {
+            return;
+        }
+
+        WorldRenderer.drawBox(stack, builder, b, red, green, blue, alpha);
     }
 
     public static void renderSingleLine(MatrixStack stack, VertexConsumer buffer, float x1, float y1, float z1,
