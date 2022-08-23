@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/85027678/185804300-84b1998c-0da1-4947-
 ## **Known issues:**                                     
   >Render glitch on water while using tracer                 
   >Some transparent blocks have render issue, glass etc.            
-  >Tracer moves weirdly when view bobbing enabled            
+  >Tracer moves weirdly while view bobbing enabled            
   >~~Render glitch on entities~~       
                       
 ## **TODO:**                            
